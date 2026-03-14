@@ -1,6 +1,6 @@
-# 🎓 Alumni Tracer System - Daily Project RK 3
+# 🎓 Alumni Tracer System (Daily Project RK 3)
 
-Sistem pelacakan alumni otomatis dengan **Weighted Scoring Algorithm** untuk akurasi data lulusan.
+Sistem pelacakan alumni otomatis berbasis web yang memanfaatkan teknik **OSINT (Open Source Intelligence)** melalui Google Search untuk memantau jejak digital dan karir lulusan.
 
 ---
 
@@ -8,19 +8,27 @@ Sistem pelacakan alumni otomatis dengan **Weighted Scoring Algorithm** untuk aku
 - **Framework:** Laravel 11
 - **Styling:** Tailwind CSS
 - **Database:** MySQL
-- **Core Logic:** Identity Disambiguation & Automated Web Scraping Simulation
+- **Basis Data:** Google Search Aggregator
 
 ---
 
-## 🧪 Pengujian Aspek Kualitas (Sesuai Desain Daily Project 2)
+## 🔍 Skema OSINT (Sesuai Laporan)
+Sistem bekerja dengan melakukan *automated search* berdasarkan parameter identitas:
+1. **Bentuk Profil**: Penggabungan kata kunci Nama + Institusi + Prodi.
+2. **Pencarian**: Sistem mengarahkan admin langsung ke hasil pencarian web publik (LinkedIn, Portal Berita, E-prints).
+3. **Verifikasi**: Pemberian skor kecocokan berdasarkan temuan data di internet untuk memvalidasi status alumni.
 
-| ID | Aspek Kualitas | Skenario Pengujian | Hasil Diharapkan | Status | Proof (Evidence) |
-|:---|:---|:---|:---|:---|:---|
-| **U-01** | **Fungsionalitas** | Admin menginput data alumni baru | Data tersimpan & muncul di dashboard | ✅ Pass | <img src="screenshots/input_test.png" width="250"> |
-| **U-02** | **Otomatisasi** | Klik tombol "Lacak" pada baris alumni | Sistem menjalankan logika scoring otomatis | ✅ Pass | <img src="screenshots/track_test.png" width="250"> |
-| **U-03** | **Akurasi** | Pencocokan data alumni asli | Skor 100% jika Nama+Kampus+Tahun sesuai | ✅ Pass | <img src="screenshots/score_100.png" width="250"> |
-| **U-04** | **Reliabilitas** | Input data non-alumni (Zaki Case) | Sistem memberi penalti skor (Disambiguasi) | ✅ Pass | <img src="screenshots/zaki_test.png" width="250"> |
-| **U-05** | **Integritas** | Menghapus data alumni | Data & riwayat tracking terhapus (Cascade) | ✅ Pass | <img src="screenshots/delete_test.png" width="250"> |
+---
+
+## 🧪 Pengujian Aspek Kualitas
+
+| ID | Aspek Kualitas | Skenario Pengujian | Hasil Diharapkan | Status |
+|:---|:---|:---|:---|:---|
+| **U-01** | **Fungsionalitas** | Admin input data alumni baru | Data muncul di tabel dashboard | ✅ Pass |
+| **U-02** | **Otomatisasi** | Klik tombol "Lacak" | Sistem men-generate link pencarian OSINT | ✅ Pass |
+| **U-03** | **Akurasi** | Pencarian alumni asli UMM | Skor tinggi jika data di internet relevan | ✅ Pass |
+| **U-04** | **Reliabilitas** | Input data orang belum kuliah | Skor rendah karena tidak ada jejak alumni | ✅ Pass |
+| **U-05** | **Integritas** | Hapus data alumni | Data utama dan hasil tracking hilang | ✅ Pass |
 
 ---
 
@@ -28,4 +36,4 @@ Sistem pelacakan alumni otomatis dengan **Weighted Scoring Algorithm** untuk aku
 - **Repositori:** [https://github.com/ErkPH/alumni-tracer](https://github.com/ErkPH/alumni-tracer)
 
 ---
-**Erik Putra Hernanda** Informatika - Universitas Muhammadiyah Malang
+**Erik Putra Hernanda** Informatika - Informatika UMM
