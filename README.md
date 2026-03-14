@@ -12,7 +12,7 @@ Sistem pelacakan alumni otomatis berbasis web yang memanfaatkan teknik **OSINT (
 
 ---
 
-## 🔍 Skema OSINT (Sesuai Laporan)
+## 🔍 Skema OSINT
 Sistem bekerja dengan melakukan *automated search* berdasarkan parameter identitas:
 1. **Bentuk Profil**: Penggabungan kata kunci Nama + Institusi + Prodi.
 2. **Pencarian**: Sistem mengarahkan admin langsung ke hasil pencarian web publik (LinkedIn, Portal Berita, E-prints).
