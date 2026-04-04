@@ -1,39 +1,52 @@
-# 🎓 Alumni Tracer System (Daily Project RK 3)
+# 🎓 Alumni Tracer & Tracking System
+**Pengembangan Sistem Informasi Alumni - Informatika Universitas Muhammadiyah Malang**
 
-Sistem pelacakan alumni otomatis berbasis web yang memanfaatkan teknik **OSINT (Open Source Intelligence)** untuk memantau jejak digital dan distribusi karir lulusan secara real-time.
+Sistem ini dikembangkan dalam dua tahap utama (Daily Project 3 & 4) untuk mencakup pelacakan digital otomatis serta pendataan database alumni yang komprehensif.
+
+---
+
+## 🚀 Fitur Utama Sistem
+
+### 🔍 1. Daily Project 3: Automated OSINT Tracking
+Sistem pelacakan alumni otomatis yang memanfaatkan teknik **OSINT (Open Source Intelligence)** untuk memantau jejak digital lulusan secara real-time.
+- **Profiling & Tracking:** Otomatisasi pencarian (Nama + Institusi + Prodi) ke platform LinkedIn, E-prints, dan Berita.
+- **Scoring System:** Penentuan validitas data berdasarkan *Confidence Score* untuk disambiguasi nama alumni.
+
+### 📋 2. Daily Project 4: Database Alumni 2000-2025
+Pendataan mandiri 8 poin informasi penting untuk database internal kampus:
+- **Informasi Lengkap:** Nama, Email, No HP, Status Kerja, Instansi, Posisi, hingga Sosial Media (LinkedIn, IG, FB, TikTok).
+- **Manajemen Data:** CRUD system untuk mengelola ribuan data alumni dari tahun 2000 hingga 2025.
+
+---
+
+## 🔐 Sistem Keamanan & Akses (PENTING)
+Sesuai instruksi, seluruh sistem kini **terlindungi oleh Middleware Auth**. Pengguna harus login terlebih dahulu untuk mengakses Dashboard Tracking maupun Database Alumni.
+
+### 🔑 Akun Login Penilaian:
+- **URL Hosting:** [https://alumni-tracer-erik.42web.io/](https://alumni-tracer-erik.42web.io/)
+- **Email Admin:** `erik@umm.ac.id`
+- **Password:** `admin123`
 
 ---
 
 ## 🛠️ Tech Stack
-- **Framework:** Laravel 11
-- **Styling:** Tailwind CSS
-- **Database:** MySQL
-- **Basis Data:** Google Search Aggregator (Automated OSINT)
+- **Framework:** Laravel 12.x
+- **Styling:** Tailwind CSS (Responsive Design)
+- **Database:** MySQL (Local: Laragon | Hosting: InfinityFree)
+- **Auth:** Manual Authentication System (Middleware protected)
 
 ---
 
-## 🔍 Alur OSINT & Disambiguasi
-Sistem bekerja dengan mengotomatisasi pencarian jejak digital berdasarkan parameter identitas yang diinput:
-1. **Profiling**: Penggabungan kata kunci (Nama + Institusi + Prodi) secara otomatis.
-2. **Tracking**: Sistem men-generate link bukti yang mengarah langsung ke web publik (LinkedIn, E-prints, Berita).
-3. **Scoring**: Penentuan status alumni berdasarkan *Confidence Score* untuk membedakan alumni asli dengan data palsu (Disambiguasi Nama).
+## 🧪 Pengujian Kualitas (UAT)
 
----
-
-## 🧪 Pengujian Aspek Kualitas
-
-| ID | Aspek Kualitas | Skenario Pengujian | Hasil Diharapkan | Status |
+| ID | Aspek | Skenario Pengujian | Hasil | Status |
 |:---|:---|:---|:---|:---|
-| **U-01** | **Fungsionalitas** | Admin meregistrasi profil alumni baru | Data tersimpan dan muncul di tabel dashboard | ✅ Pass |
-| **U-02** | **Otomatisasi** | Klik tombol "Lacak" pada baris alumni | Sistem otomatis men-generate link pencarian OSINT | ✅ Pass |
-| **U-03** | **Akurasi** | Pencarian data alumni asli (UMM) | Skor mencapai 80-100% karena data relevan | ✅ Pass |
-| **U-04** | **Reliabilitas** | Input data non-alumni (Kasus: Zaki) | Skor rendah (<50%) karena jejak digital tidak cocok | ✅ Pass |
-| **U-05** | **Integritas** | Menghapus data utama alumni | Data utama dan hasil tracking hilang | ✅ Pass |
+| **U-01** | **Security** | Akses URL dashboard tanpa login | Otomatis redirect ke halaman /login | ✅ Pass |
+| **U-02** | **OSINT** | Klik tombol "Lacak" (Daily 3) | Generate link pencarian digital otomatis | ✅ Pass |
+| **U-03** | **Database** | Input data alumni 8 poin (Daily 4) | Data tersimpan di DB & muncul di tabel | ✅ Pass |
+| **U-04** | **Navigasi** | Pindah antar tab Tugas 3 & 4 | Navigasi lancar tanpa logout otomatis | ✅ Pass |
+| **U-05** | **Integrity** | Hapus data alumni | Data utama & hasil tracking ikut terhapus | ✅ Pass |
 
 ---
-
-## 🔗 Tautan Project
-- **Repositori:** [https://github.com/ErkPH/alumni-tracer](https://github.com/ErkPH/alumni-tracer)
-
----
-**Erik Putra Hernanda** - Informatika Universitas Muhammadiyah Malang
+**Erik Putra Hernanda** (202310370311250)
+*Informatika - Universitas Muhammadiyah Malang*
