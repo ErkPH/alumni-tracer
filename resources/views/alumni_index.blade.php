@@ -12,7 +12,12 @@
     </style>
 </head>
 <body class="bg-[#F9FAFB] min-h-screen text-slate-900">
-
+<nav class="bg-white border-b border-slate-100 p-4 shadow-sm mb-6">
+    <div class="max-w-6xl mx-auto flex gap-4">
+        <a href="{{ route('alumni.index') }}" class="font-bold text-blue-600">Tugas 3: Tracking</a>
+        <a href="{{ route('alumni_lengkap.index') }}" class="text-slate-500 hover:text-blue-600">Tugas 4: Alumni 2000-2025</a>
+    </div>
+</nav>
     <div class="max-w-6xl mx-auto py-12 px-6">
         
         <div class="flex flex-col md:flex-row md:items-center justify-between mb-10 gap-4">
